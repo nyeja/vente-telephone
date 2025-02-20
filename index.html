@@ -37,69 +37,106 @@
 
     
     <!-- Barre de navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+    
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">ACCUEIL</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="telephone.html">TÉLÉPHONES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">PROMOTIONS</a>
-                    </li>
-                  
-                </ul>
+                <!-- Appliquer le fond bleu uniquement à cette div -->
+                <div class="bg-primary px-3 py-2 rounded">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">ACCUEIL</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="telephone.html">TÉLÉPHONES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">PROMOTIONS</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
+    
+    
+        <!-- Filtres -->
+        <section class="container my-4">
+            <div class="d-flex align-items-center">
+                <span class="me-3 fw-bold">Filtrer par :</span>
+                <select class="form-select w-auto me-2">
+                    <option selected>Version OS</option>
+                </select>
+                <select class="form-select w-auto me-2">
+                    <option selected>Types</option>
+                </select>
+                <select class="form-select w-auto">
+                    <option selected>SIM</option>
+                </select>
+            </div>
+        </section>
 
-
-     <!-- Filtres -->
-     <section class="container my-4">
-        <div class="d-flex align-items-center">
-            <span class="me-3 fw-bold">Filtrer par :</span>
-            <select class="form-select w-auto me-2">
-                <option selected>Version OS</option>
-            </select>
-            <select class="form-select w-auto me-2">
-                <option selected>Types</option>
-            </select>
-            <select class="form-select w-auto">
-                <option selected>SIM</option>
-            </select>
+    <!-- Section des marques disponibles -->
+<section class="container my-4">
+    <h2 class="text-center mb-4">Marques disponibles</h2>
+    <div class="row text-center">
+        <div class="col-md-3">
+            <div class="card p-3 hover-effect">
+                <h5>Samsung</h5>
+                <button class="btn btn-primary" onclick="goToPhones('Samsung')">Voir plus</button>
+            </div>
         </div>
-    </section>
-
-    <!-- Grille des produits (chargée dynamiquement en JS) -->
-    <section class="container my-4">
-        <div class="row g-4" id="product-grid"></div>
-    </section>
-
-    <!-- Modal pour afficher les détails d'un produit -->
-    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <img id="modalImage" class="img-fluid mb-3" alt="Product Image">
-                    <p id="modalDescription"></p>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-success" id="addToCart">Ajouter au panier</button>
-                </div>
+        <div class="col-md-3">
+            <div class="card p-3 hover-effect">
+                <h5>iPhone</h5>
+                <button class="btn btn-primary" onclick="goToPhones('iPhone')">Voir plus</button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-3 hover-effect">
+                <h5>Xiaomi</h5>
+                <button class="btn btn-primary" onclick="goToPhones('Xiaomi')">Voir plus</button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-3 hover-effect">
+                <h5>Infinix</h5>
+                <button class="btn btn-primary" onclick="goToPhones('Infinix')">Voir plus</button>
             </div>
         </div>
     </div>
+</section>
+
+ 
+<!-- Carrousel des promotions -->
+<section class="container my-4">
+    <h2 class="text-center mb-4">Nos Promotions</h2>
+    <div id="promotionCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="promo1.jpg" class="d-block w-100" alt="Promotion 1">
+            </div>
+            <div class="carousel-item">
+                <img src="promo2.jpg" class="d-block w-100" alt="Promotion 2">
+            </div>
+            <div class="carousel-item">
+                <img src="promo3.jpg" class="d-block w-100" alt="Promotion 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#promotionCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Précédent</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#promotionCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Suivant</span>
+        </button>
+    </div>
+</section>
+
 
     <!-- Témoignages Clients -->
     <section class="container my-5">
@@ -125,6 +162,7 @@
             </div>
         </div>
     </section>
+    
      <!-- Section FAQ -->
      <section class="container my-5">
         <h2 class="text-center mb-4">Questions Fréquentes</h2>
@@ -153,11 +191,11 @@
         <h2>Inscrivez-vous à notre Newsletter</h2>
         <p>Recevez nos meilleures offres et nouveautés.</p>
         <form class="d-flex justify-content-center">
-            <input type="email" class="form-control w-50 me-2" placeholder="Votre email">
+            <input type="email" class="form-control w-50 me-2" placeholder="Votre email" required>
             <button class="btn btn-primary">S'inscrire</button>
         </form>
     </section>
-
+    
     <footer class="bg-dark text-light py-4">
         <div class="container">
             <div class="row">

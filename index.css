@@ -85,5 +85,48 @@ nav ul li {
 
 .card {
     margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
 }
+.card:nth-child(1) {
+    animation-delay: 0.8s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.9s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajout de l'effet hover dans ton fichier CSS */
+.hover-effect:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+.card-img-top {
+    width: 100%;         /* Assure que l'image prend toute la largeur de la carte */
+    height: 250px;       /* Fixe une hauteur appropriée */
+    object-fit: cover;   /* Couvre l'espace sans déformation */
+    max-width: 300px;    /* Limite la largeur de l'image à 300px */
+    max-height: 250px;   /* Limite la hauteur à 250px */
+    margin: 0 auto;      /* Centre l'image dans la carte */
+}
+@media (max-width: 768px) {
+    .card-img-top {
+        width: 100%;
+        height: 200px;
+    }
+}
+
 

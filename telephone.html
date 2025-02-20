@@ -80,29 +80,48 @@
         </div>
     </section>
     <!-- Les téléphones -->
-    <!-- Grille des produits (chargée dynamiquement en JS) -->
-    <section class="container my-4">
+    <section id="iphone" class="container my-4">
+        <h2 class="text-center">iPhone</h2>
+        <div class="row g-4" id="product-grid-iphone"></div>
+    </section>
+    
+    <section id="samsung" class="container my-4">
+        <h2 class="text-center">Samsung</h2>
         <div class="row g-4" id="product-grid-samsung"></div>
     </section>
     
+    <section id="xiaomi" class="container my-4">
+        <h2 class="text-center">Xiaomi</h2>
+        <div class="row g-4" id="product-grid-xiaomi"></div>
+    </section>
+    
+    <section id="infinix" class="container my-4">
+        <h2 class="text-center">Infinix</h2>
+        <div class="row g-4" id="product-grid-infinix"></div>
+    </section>
+    
+
+    
     <!-- Modal pour afficher les détails d'un produit -->
-    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <img id="modalImage" class="img-fluid mb-3" alt="Product Image">
-                    <p id="modalDescription"></p>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-success" id="addToCart">Ajouter au panier</button>
-                </div>
+    <!-- Modal pour afficher les détails d'un produit -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" class="img-fluid mb-3" alt="Product Image">
+                <p id="modalDescription"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success btn-lg" id="addToCart">Ajouter au panier</button>
             </div>
         </div>
     </div>
+</div>
+
     <!--Fin telephone -->
     <!-- Exemple d'utilisation dans une section -->
     <section class="container my-4" data-aos="fade-up">
